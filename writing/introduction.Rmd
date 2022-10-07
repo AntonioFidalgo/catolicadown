@@ -2,8 +2,8 @@
 \pagenumbering{arabic}\setcounter{page}{1}
 \onehalfspacing
 
-# Introduction
+# Introduction {#sec-introduction}
 
-Since time immemorial... really? 
-
+Since time immemorial... really?   
+See conclusion in Section \@ref(sec-conclusion).
 

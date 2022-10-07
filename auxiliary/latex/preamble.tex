@@ -14,10 +14,16 @@
 
 \AtBeginDocument{\let\maketitle\relax}
 
-\usepackage{fontspec}
+
+\usepackage{fontspec} % the required font!
 \setmainfont{Times New Roman}
 
-\usepackage{dcolumn}
+\usepackage{dcolumn} % for stargazer, for instance
+
+
+
+\usepackage{hyperref}
+\renewcommand\UrlFont{\color{red}\rmfamily\itshape}
 
 % Avoid weird line and word breaks
 \tolerance = 1

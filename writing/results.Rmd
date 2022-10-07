@@ -1,0 +1,55 @@
+\clearpage
+
+# Results {#results}
+
+
+
+## Preliminary results
+
+See the results in Table \@ref(tab:mytable01).
+
+```{r mytable01, message = FALSE}
+limits <- c(30, 60, 90)
+excluded <- c("Australia", "Austria", "Belgium", "Canada", "Denmark")
+
+read_xlsx("../data/rr_data.xlsx") |>
+  select(1:5) |>
+  rename(country = "Country",
+         year = "Year",
+         d2gdp = "Debt-to-GDP",
+         gr = "Growth rate",
+         dc = "Debt category") |>
+  mutate(our.dc = factor(case_when(
+    d2gdp <= limits[1] ~ "<30\\%",
+    d2gdp <= limits[2] ~ "30-60\\%",
+    d2gdp <= limits[3] ~ "60-90\\%",
+    TRUE ~ "≥90\\%"
+  ), levels = c("<30\\%", "30-60\\%", "60-90\\%", "≥90\\%"),
+  ordered = TRUE)) |>
+  filter(!(country=="Australia" & year<=1950) &
+           !(country=="New Zealand" & year<=1949) &
+           !(country=="Canada" & year<=1950) ) |>
+  filter(!(country %in% excluded)) |>
+  group_by(country, our.dc) |>
+  summarise(c.mean = mean(gr)) |>
+  ungroup() |>
+  group_by(our.dc) |>
+  summarise(cc.mean = round(mean(c.mean), 1)) |>
+  knitr::kable("latex",
+               col.names = c("Public debt-to-GDP category",
+                             "Cross-country mean growth"),
+               align = c("cc"),
+               booktabs = T,
+               escape = F,
+               caption = "Reinhart and Rogoff results."
+               ) |>
+  kable_minimal() |>
+  kable_styling(latex_options = c("striped",
+                                  "repeat_header",
+                                  "HOLD_position" # needed here, otherwise above header
+                                  ),
+                position = "center") |>
+  row_spec(0, bold = TRUE) |>
+  column_spec(1:2, width = "3cm")
+```
+

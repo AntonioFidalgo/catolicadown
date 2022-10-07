@@ -1,6 +1,6 @@
 \clearpage 
 
-# Conclusion
+# Conclusion {#sec-conclusion}
 
 
 ```{r r2d2pic, fig.cap="My supervisor.", out.width = "20%", fig.align = 'center'}

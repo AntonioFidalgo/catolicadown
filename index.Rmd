@@ -8,7 +8,7 @@
 knit: (function(input, ...) {
     thesis_formats <- c("pdf");  
     
-    source("auxiliary/knit_functions.R");
+    source("auxiliary/R_scripts/knit_functions.R");
     knit_thesis(input, thesis_formats, ...)
   })
 
@@ -71,8 +71,8 @@ content <- c(
   "writing/introduction.Rmd", # mandatory
   
   #"writing/otherchapter.Rmd", #don't forget \clearpage
-  
-  "writing/conclusion.Rmd",
+  "writing/results.Rmd",
+  "writing/conclusion.Rmd", # mandatory
   
   # References
   "auxiliary/references.Rmd", # mandatory
@@ -89,7 +89,7 @@ content <- c(
 
 
 ```{r install_packages, include = FALSE}
-source('auxiliary/install_if_missing.R')
+source('auxiliary/R_scripts/install_if_missing.R')
 ```
 
 

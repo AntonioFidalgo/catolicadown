@@ -1,6 +1,7 @@
 bookdown::pdf_book:
   includes:
-    in_header: auxiliary/preamble.tex
+    in_header: auxiliary/latex/preamble.tex
+    before_body: auxiliary/latex/before.tex
   latex_engine: xelatex
   toc: no
   keep_tex: yes
