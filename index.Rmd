@@ -1,0 +1,98 @@
+---
+##### Version: 0.1 [ship] of October 6, 2022
+##### Copyright & disclaimer: see license.txt
+
+
+#####
+# Output formats 
+knit: (function(input, ...) {
+    thesis_formats <- c("pdf");  
+    
+    source("auxiliary/knit_functions.R");
+    knit_thesis(input, thesis_formats, ...)
+  })
+
+
+
+#####
+# Bibliography
+bibliography: bibliography.bib
+link-citations: yes
+citeproc: true
+csl: auxiliary/csl/chicago-author-date.csl
+nocite: '@*'
+
+#####
+# Other
+linkcolor: black
+fontsize: 12pt
+
+
+
+#####
+# Thesis information  
+title: "Focus on the content"  
+subtitle: "A Rmd template for writing a Master's dissertation at CLSBE" 
+author: "Antonio Fidalgo and Simão Nogueira"
+supervisor: "Prof. R2D2"
+program: "Reproducible Business"
+date: "October 6, 2022"  
+TimesNewRoman: TRUE
+
+
+
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Turn off scientific notation
+options(scipen = 999)
+
+
+content <- c(
+  # Front page
+  "auxiliary/frontpage.Rmd", # mandatory
+  
+  # Acknowledgments
+  "writing/dedication.Rmd",
+  "writing/acknowledgments.Rmd", # mandatory
+  
+  # Abstracts
+  "writing/abstract.Rmd", # mandatory
+  "writing/resumo.Rmd", # mandatory
+  
+  # Tables of Contents
+  "auxiliary/tocs.Rmd", # mandatory
+  "writing/abbreviations.Rmd",
+  
+  
+  # Chapters
+  "writing/introduction.Rmd", # mandatory
+  
+  #"writing/otherchapter.Rmd", #don't forget \clearpage
+  
+  "writing/conclusion.Rmd",
+  
+  # References
+  "auxiliary/references.Rmd", # mandatory
+  
+  # Appendix 
+  # ! if any, end line with , when calling the chapter for references above
+  # ! if none, comment out the , when calling the chapter for references above
+  "writing/appendix.Rmd"
+  
+)
+
+
+```
+
+
+```{r install_packages, include = FALSE}
+source('auxiliary/install_if_missing.R')
+```
+
+
+```{r child = content}
+```
+

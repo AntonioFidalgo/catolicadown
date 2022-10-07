@@ -1,0 +1,33 @@
+\clearpage
+# List of Acronyms and Abbreviations {.unnumbered}
+
+```{r abbreviations}
+abbreviations <- tribble(~"abbreviation", ~"definition",
+  "R2D2", "Reproducible Research \\& Dynamic Document",
+  "NUTS", "Nomenclature of Territorial Units for Statistics"
+  )
+```
+
+
+
+
+
+```{r}
+abbreviations |>
+  arrange(abbreviation) |>
+  knitr::kable("latex",
+               col.names = c("Acronym/ Abbrev.",
+                             "Definition"),
+               align = c("ll"),
+               booktabs = T,
+               escape = F
+               ) |>
+  kable_minimal() |>
+  kable_styling(latex_options = c("striped",
+                                  "repeat_header",
+                                  "HOLD_position"),
+                position = "left") |>
+  row_spec(0, bold = TRUE) |>
+  column_spec(1, width = "2cm") 
+```
+

@@ -1,0 +1,10 @@
+\clearpage
+\pagenumbering{roman}
+
+# Acknowledgments {-}
+
+We drew a great deal of inspiration from books and papers such as @Xie_2015 and @Wickham_2010. We deeply thank their authors, Yihui Xie and Hadley Wickham, for these fantastic contributions.   
+
+The usual disclaimer applies.  
+
+

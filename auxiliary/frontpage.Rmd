@@ -1,0 +1,27 @@
+\pagenumbering{gobble}
+
+```{r, echo=FALSE, fig.cap='', out.width='66%', fig.align='center'}
+knitr::include_graphics('figures/logo.png')
+```
+
+\begin{centering}
+\vfill
+\begin{spacing}{1.0}
+\parbox{35em}{\centering\Huge\bf  `r rmarkdown::metadata$title`} \\
+\vspace{\baselineskip}
+\parbox{35em}{\centering\LARGE  `r rmarkdown::metadata$subtitle` }
+\end{spacing}
+\vfill 
+{\LARGE\bf `r rmarkdown::metadata$author` }
+\vfill 
+\parbox{35em}{\centering\Large Dissertation written under the supervision of `r rmarkdown::metadata$supervisor`.} 
+\vfill 
+\parbox{35em}{\centering\Large Dissertation submitted in partial fulfilment of requirements for the MSc in `r rmarkdown::metadata$program`, at the Universidade Católica Portuguesa.\\% 
+\vspace{\baselineskip}
+`r rmarkdown::metadata$date`}
+
+\end{centering}
+\clearpage
+\pagenumbering{roman}
+
+

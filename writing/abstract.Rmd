@@ -1,0 +1,12 @@
+\clearpage
+
+# Abstract {.unnumbered}
+
+
+**Title:** `r rmarkdown::metadata$title`.  `r rmarkdown::metadata$subtitle`   
+**Author:** `r rmarkdown::metadata$author`    
+**Keywords:** Reproducible research; Dynamic document; Master thesis.
+
+\vspace{3\baselineskip}
+
+Abstract here...

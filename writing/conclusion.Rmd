@@ -1,0 +1,9 @@
+\clearpage 
+
+# Conclusion
+
+
+```{r r2d2pic, fig.cap="My supervisor.", out.width = "20%", fig.align = 'center'}
+knitr::include_graphics("figures/r2d2.png")
+```
+

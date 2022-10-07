@@ -1,0 +1,12 @@
+\clearpage
+
+# Resumo {.unnumbered}
+
+
+**Title:** `r rmarkdown::metadata$title`.  `r rmarkdown::metadata$subtitle`   
+**Author:** `r rmarkdown::metadata$author`   
+**Palavras-chave:** Investigação reproduzível; Documento Dinâmico; Tese de Mestrado.
+
+\vspace{3\baselineskip}
+
+Resumo aqui...
